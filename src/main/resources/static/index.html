@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+        <title>Formulir KTM</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -15,7 +16,7 @@ and open the template in the editor.
         <style>
             fieldset{
                 width: 750px;
-                height: 480px;
+                height: 520px;
             }
             body{
                 background-size:cover;
@@ -50,14 +51,16 @@ and open the template in the editor.
             <fieldset>
             <h1>KTM</h1>
             <hr/>
-            <form action="#" method="post" enctype="multipart/form-data">
-                <p>Nama Mahasiswa : <input type="text" name="nMaha"/>
+            <form action="/displaydata" method="post" enctype="multipart/form-data">
+                <p>Nama Mahasiswa : <input type="text" name="nNMaha"/>
                 </p><br/><br/>
                 <p style="margin-right: 150px">NIM : <input type="text" name="nNIM"/>
                 </p><br/><br/><br/><br/>
                 <p style="margin-right: 150px">Program Studi : <input type="text" name="nPs"/>
                 </p><br/><br/><br/><br/>
-                <p>Foto Mahasiswa : <input type="file" name="nFotoMaha"/>
+                <p style="margin-right: 150px">Email : <input type="text" name="nEmail"/>
+                </p><br/><br/><br/><br/>
+                <p>Foto Mahasiswa : <input type="file" name="nFotoMaha" accept="image/*"/>
                 </p><br/><br/>
                 <input type="submit" value="Simpan Data" style=" font-family: 'Rubik', sans-serif; font-size:20px;background-color: #77c3ec; color: white; border:2px solid gray; float:right; margin-top: 60px; margin-bottom: 20px; margin-right: 35px;"/>
                 <br/><br/>

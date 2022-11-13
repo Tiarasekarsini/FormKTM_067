@@ -6,11 +6,64 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+        <title>Data Mahasiswa</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <style>
+            fieldset{
+                width: 750px;
+                height: 480px;
+            }
+            body{
+                background-size:cover;
+                background-repeat: no-repeat;
+                background-position:center;
+                background-attachment: fixed;
+                height: 100%;
+            }
+            h1{
+                font-family: 'Rubik', sans-serif;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 45px;
+            }
+            h3{
+                font-family: 'Secular One', sans-serif;
+                font-size: 20px;
+            }
+            l{
+                font-family: 'Secular One', sans-serif;
+                font-size: 22px;
+                margin-left: 35px;
+                float: left;
+            }
+            img{
+                width: 200px;
+                height: 250px;
+                float: right;
+                margin-right:  35px;
+            }
+        </style>
+    <center>
+        <fieldset>
+            <h1>KTM</h1>
+            <h3>(Kartu Tanda Mahasiswa)</h3>
+            <hr/>
+                <img th:src="${pFotoMaha}"></img>
+                <br/><br/>
+                <l th:text="${pNMaha}"style="margin-top: 130px"></l>
+                <br/>
+                <l th:text="${pNIM}" style="margin-right: 170px"></l>
+                <br/><br/>
+                <l th:text="${pPS}" style="margin-right: 170px"></l>
+                <br/><br/>
+                <l th:text="${pEmail}" style="margin-bottom: 20px;margin-right: 170px;color: blue"></l>
+                <br/><br/>
+        </fieldset>
+    </center>
     </body>
 </html>

@@ -22,22 +22,27 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 public class thisController {
     @RequestMapping("/displaydata")
-    @ResponseBody
-    
+
     public String dataMahasiswa(
-            @RequestParam("nMaha") String form1,
+            @RequestParam("nNMaha") String form1,
             @RequestParam("nNIM") String form2,
-            @RequestParam("nPS") String form3,
-            @RequestParam("nFotoMaha") MultipartFile form4,
+            @RequestParam("nPs") String form3,
+            @RequestParam("nEmail") String form4,
+            @RequestParam("nFotoMaha") MultipartFile form5,
             Model paket
+            
     )throws IOException{
-        String blob = Base64.encodeBase64String(form4.getBytes());
+        String blob = Base64.encodeBase64String(form5.getBytes());
+        String tampilgambar = "data:image/*;base64,"+blob;
         
-        paket.addAttribute("pMaha", form1);
+        //Proses mengirim data 
+        paket.addAttribute("pNMaha", form1);
         paket.addAttribute("pNIM", form2);
         paket.addAttribute("pPS", form3);
+        paket.addAttribute("pEmail", form4);
+        paket.addAttribute("pFotoMaha", tampilgambar);
         
-        return "view"+"<center><br/><br/><img src='data:image/*;base64,"+blob+"' /><br/><br/><center/>";
+        return "view";
     }
     
 }

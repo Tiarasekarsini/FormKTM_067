@@ -6,7 +6,10 @@
 package wsa.formKTM.formKTM;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +31,15 @@ public class thisController {
             @RequestParam("nNIM") String form2,
             @RequestParam("nPs") String form3,
             @RequestParam("nEmail") String form4,
-            @RequestParam("nFotoMaha") MultipartFile form5,
+            @RequestParam("nTanggalL") @DateTimeFormat(pattern="yyyy-MM-dd") Date form5,
+            @RequestParam("nFotoMaha") MultipartFile form6,
             Model paket
             
     )throws IOException{
-        String blob = Base64.encodeBase64String(form5.getBytes());
+        SimpleDateFormat newTgl = new SimpleDateFormat("dd MMMM yyyy");
+        String tanggalL = newTgl.format(form5);
+        
+        String blob = Base64.encodeBase64String(form6.getBytes());
         String tampilgambar = "data:image/*;base64,"+blob;
         
         //Proses mengirim data 
@@ -40,6 +47,7 @@ public class thisController {
         paket.addAttribute("pNIM", form2);
         paket.addAttribute("pPS", form3);
         paket.addAttribute("pEmail", form4);
+        paket.addAttribute("pTanggalL", tanggalL);
         paket.addAttribute("pFotoMaha", tampilgambar);
         
         return "view";

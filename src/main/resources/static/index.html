@@ -16,7 +16,7 @@ and open the template in the editor.
         <style>
             fieldset{
                 width: 750px;
-                height: 520px;
+                height: 635px;
             }
             body{
                 background-size:cover;
@@ -30,6 +30,10 @@ and open the template in the editor.
                 text-align: center;
                 text-transform: uppercase;
                 font-size: 45px;
+            }
+            h3{
+                font-family: 'Secular One', sans-serif;
+                font-size: 20px;
             }
             p{
                 font-family: 'Secular One', sans-serif;
@@ -50,11 +54,14 @@ and open the template in the editor.
         <center>
             <fieldset>
             <h1>KTM</h1>
+            <h3>(Kartu Tanda Mahasiswa)</h3>
             <hr/>
             <form action="/displaydata" method="post" enctype="multipart/form-data">
                 <p>Nama Mahasiswa : <input type="text" name="nNMaha"/>
                 </p><br/><br/>
                 <p style="margin-right: 150px">NIM : <input type="text" name="nNIM"/>
+                </p><br/><br/><br/><br/>
+                <p style="margin-right: 150px">Tanggal Lahir : <input type="date" name="nTanggalL"/>
                 </p><br/><br/><br/><br/>
                 <p style="margin-right: 150px">Program Studi : <input type="text" name="nPs"/>
                 </p><br/><br/><br/><br/>

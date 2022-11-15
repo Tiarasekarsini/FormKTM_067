@@ -16,8 +16,10 @@ and open the template in the editor.
         <style>
             fieldset{
                 width: 750px;
-                height: 500px;
-                
+                height: 410px;
+                background-color: #FFD700;
+                box-shadow: 0 10px 10px -2px rgba(0,0,0,0.12),0 -2px 10px -2px rgba(0,0,0,0.12);
+                border: solid #D4A017 10px;
             }
             body{
                 background-size:cover;
@@ -30,11 +32,7 @@ and open the template in the editor.
                 font-family: 'Rubik', sans-serif;
                 text-align: center;
                 text-transform: uppercase;
-                font-size: 45px;
-            }
-            h3{
-                font-family: 'Secular One', sans-serif;
-                font-size: 20px;
+                font-size: 30px;
             }
             l{
                 font-family: 'Secular One', sans-serif;
@@ -46,17 +44,25 @@ and open the template in the editor.
                 width: 200px;
                 height: 250px;
                 float: right;
-                margin-right:  35px;
+                margin-right:  45px;
+                margin-top: 20px;
+            }
+            p{
+                font-family: 'Secular One', sans-serif;
+                font-size: 11px;
+                margin-top: 60px;
+                margin-left: 20px;
+                float: left;
             }
         </style>
     <center>
         <fieldset>
-            <h1>KTM</h1>
-            <h3>(Kartu Tanda Mahasiswa)</h3>
+            <h1 style="margin-left:50px;margin-right: 125px"><image src="https://4.bp.blogspot.com/-NpnbA2HyAx8/WECWf-kO-sI/AAAAAAAAA1c/HF5-f9yBzrYFAHOG6aIyGCjTCwsqOlxnQCLcB/s1600/Umy.gif" style="width: 80px; height: 70px;margin-right:70px;margin-top:-20px;float: left">
+                    Kartu Tanda Mahasiswa</h1>
             <hr/>
                 <img th:src="${pFotoMaha}"></img>
                 <br/><br/>
-                <l th:text="${pNMaha}"style="margin-top: 130px"></l>
+                <l th:text="${pNMaha}"style="margin-top: 50px"></l>
                 <br/>
                 <l th:text="${pNIM}" style="margin-right: 170px"></l>
                 <br/><br/>
@@ -64,8 +70,10 @@ and open the template in the editor.
                 <br/><br/>
                 <l th:text="${pPS}" style="margin-right: 170px"></l>
                 <br/><br/>
-                <l th:text="${pEmail}" style="margin-bottom: 20px;margin-right: 170px;color: blue"></l>
-                <br/><br/>
+                <l th:text="${pEmail}" style="margin-bottom: -20px;margin-right: 170px;color: blue;font-size: 17px"></l>
+                <br/><br/><br/>
+                <p>*Kartu ini harus selalu dibawa selama mengikuti kegiatan di lingkungan kampus</p>
+                <p style="margin-top: 0px">*Kartu ini tidak dapat digunakan sebagai jaminan transaksi dalam bentuk apapun</p>
         </fieldset>
     </center>
     </body>
